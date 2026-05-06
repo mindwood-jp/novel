@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>八十年後から来た男</title>
+<title>八十年後から来た男｜短編ノベル/title>
 <meta property="og:title" content="八十年後から来た男">
 <meta property="og:description" content="石丸伸二をモデルにした、最も憎まれ、最も日本を愛した男の、歴史改変ミステリー">
 <meta property="og:image" content="https://mindwood-jp.github.io/novel/ogp.png">
@@ -11,66 +11,126 @@
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <style>
-  body {
+body {
+	margin: 0;
 	font-family: "游明朝", "YuMincho", "Hiragino Mincho ProN", serif;
 	background: #fdfaf5;
 	color: #1a1a1a;
-	max-width: 720px;
-	margin: 0 auto;
-	padding: 2rem .5rem 4rem;
 	line-height: 2;
 	font-size: 1.05rem;
-  }
-  h1.novel-title {
+}
+h1 {
 	text-align: center;
 	font-size: 2rem;
-	margin: 3rem 0 0.5rem;
-	letter-spacing: 0.1em;
-  }
-  .chapter-title {
+	margin: 3rem 0 .5rem;
+	letter-spacing: .1em;
+}
+h2 {
 	margin-top: 3rem;
 	margin-bottom: 0.1rem;
 	font-size: 1rem;
 	color: #555;
-  }
-  .chapter-title p {
-	margin: 0;
-  }
-  .chapter-label {
+	font-weight: normal;
+}
+header {
+	position: relative;
+	max-width: 720px;
+	margin: 0 auto 2rem;
+}
+header img {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+main {
+	max-width: 720px;
+	margin: 0 auto;
+	padding: 0 .5rem 4rem;
+}
+h2 + div {
 	font-size: 1.4rem;
 	font-weight: bold;
 	margin-bottom: 1.5rem;
 	border-bottom: 1px solid #ccc;
 	padding-bottom: 0.4rem;
-  }
-  .novel p {
+}
+.content p {
 	margin: 0 0 1em 0;
 	text-indent: 1em;
-  }
-  .novel p.no-indent {
+}
+.content p.no-indent {
 	text-indent: 0;
-  }
-  .novel p.nr {
+}
+.content p.nr {
 	margin-top: 3em;
-  }
-  .ending {
+}
+i.d::before {
+	content: "――";
+	font-family: "Yu Mincho", "YuMincho", "Hiragino Mincho ProN", serif;
+	letter-spacing: -0.2em;
+	padding: 0 .5em 0 .1em;
+}
+.fin {
 	text-align: center;
 	margin-top: 3rem;
 	font-weight: bold;
 	letter-spacing: 0.2em;
-  }
-  span.dash {
-	font-family: "Yu Mincho", "YuMincho", "Hiragino Mincho ProN", serif;
-	letter-spacing: 0;
-	padding: 0 0.2em;
-  }  
+}
+#novel-nav {
+	position: absolute;
+	bottom: 12px;
+	right: 8px;
+	z-index: 10;
+	display: flex;
+	flex-direction: column;
+	gap: 0;
+	background: rgba(255, 255, 255, 0.4);
+	padding: 0;
+	border-radius: 6px;
+	font-size: 0.85rem;
+	min-width: 100px;
+	overflow: hidden;
+}
+#novel-nav a {
+	color: #1a1a1a;
+	text-decoration: none;
+	line-height: 1.2;
+	text-align: right;
+	width: 100%;
+	display: block;
+	padding: 3px 12px; 
+	box-sizing: border-box;
+	border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+#novel-nav a:last-child {
+	border-bottom: none;
+}
+#novel-nav a:hover {
+	background: rgba(0, 0, 0, 0.1);
+}
+@media screen and (max-width: 480px) {
+	#novel-nav {
+		bottom: 2px;
+		right: 6px;
+		font-size: 0.7rem;
+		min-width: 70px;
+	}
+	#novel-nav a {
+		padding: 1px 8px;
+		line-height: 1.0;
+	}
+}
 </style>
 </head>
 <body>
-<h1 class="novel-title">八十年後から来た男</h1>
-<div class="chapter-title"><p>プロローグ</p></div>
-<div class="chapter-label">&nbsp;</div>
-<div class="novel">
+<header>
+	<img src="https://mindwood-jp.github.io/novel/ogp.png">
+	<nav id="novel-nav"></nav>
+</header>
+<h1>八十年後から来た男</h1>
+<main>
+<h2>プロローグ</h2><div>&nbsp;</div>
+<div class="content">
 <p>2105年、日本。</p>
 <p class="nr">それは、もはや「国家」と呼ぶには曖昧な存在だった。</p>
 <p>列島は分断され、いくつかの都市が外資と協定を結び、かろうじて機能を保っている。</p>
@@ -82,13 +142,13 @@
 <p>2105年の日本では、それは特別な数字ではなかった。医療技術の進歩が平均寿命を百二十年近くまで押し上げたからだ。だが国は、その逆を辿っていた。</p>
 <p>その皮肉の中を、市丸は八十年かけて生きてきたのだ。</p>
 <p>若い頃から「俺は百二十歳まで生きる」と公言し、周囲を笑わせていた。</p>
-<p>その言葉通りに、彼は生きた。ただ<span class="dash">&mdash;&mdash;</span>生き延びた先に待っていたものは、誰も想像していなかった。</p>
+<p>その言葉通りに、彼は生きた。ただ<i class="d"></i>生き延びた先に待っていたものは、誰も想像していなかった。</p>
 <p class="nr">市丸は、装置の前に立つまでに、一度だけ振り返った。</p>
 <p>白い部屋には、何もない。</p>
 <p>持ち込めるものは、記憶だけだと言われた。</p>
 <p>百二十年分の記憶。友人の顔、積み重ねた仕事、老いていく自分を知っている人々。</p>
 <p>それらすべてが、戻った時にはもう、意味を持たない。</p>
-<p>いや<span class="dash">&mdash;&mdash;</span>戻れるかどうかも、分からない。</p>
+<p>いや<i class="d"></i>戻れるかどうかも、分からない。</p>
 <p class="no-indent">（それでいい）</p>
 <p>そう思えた時、市丸は装置の前に座った。</p>
 <p class="no-indent nr">「歴史修正プロジェクトの最終確認を行います」</p>
@@ -96,7 +156,7 @@
 <p class="no-indent">「過去改変は一度きり。帰還は保証されません」</p>
 <p class="no-indent">「構いません」</p>
 <p>市丸は即答した。</p>
-<p class="no-indent">「あなたは歴史上、強い反発を受ける可能性があります。名誉、評価、記録<span class="dash">&mdash;&mdash;</span>そのすべてを失うかもしれません」</p>
+<p class="no-indent">「あなたは歴史上、強い反発を受ける可能性があります。名誉、評価、記録<i class="d"></i>そのすべてを失うかもしれません」</p>
 <p>わずかに、間があった。</p>
 <p class="no-indent">「それでも行きますか？」</p>
 <p>市丸は目を閉じた。</p>
@@ -106,7 +166,7 @@
 <p>脳裏に、一つの像が浮かぶ。</p>
 <p>妹の遥（ハルカ）だ。</p>
 <p>この時代にはもういない。</p>
-<p>どこで、どうなったのか<span class="dash">&mdash;&mdash;</span>市丸は調べなかった。</p>
+<p>どこで、どうなったのか<i class="d"></i>市丸は調べなかった。</p>
 <p>調べれば、行けなくなると思ったから。</p>
 <p class="no-indent">（それでも）</p>
 <p class="no-indent nr">「はい」</p>
@@ -118,21 +178,20 @@
 <p>次の瞬間、その姿は消えていた。</p>
 </div>
 
-<div class="chapter-title"><p>第一章</p></div>
-<div class="chapter-label">違和感のある男</div>
-<div class="novel">
+<h2>第一章</h2><div>違和感のある男</div>
+<div class="content">
 <p>2020年代後半。</p>
 <p class="nr">光の中から目が覚めた時、最初に感じたのは、音だった。</p>
-<p>車のエンジン音、人の声、街角の広告から流れるBGM<span class="dash">&mdash;&mdash;</span>2105年にはもう存在しない種類の騒がしさだった。</p>
+<p>車のエンジン音、人の声、街角の広告から流れるBGM<i class="d"></i>2105年にはもう存在しない種類の騒がしさだった。</p>
 <p>街を歩く人々の顔が、まだ何かを信じているように見えた。</p>
 <p>当たり前だ。この時代はまだ、誰も諦めていない。</p>
-<p><span class="dash">&mdash;&mdash;</span>間に合った、と思った。</p>
+<p><i class="d"></i>間に合った、と思った。</p>
 <p class="nr">過去に来てから、最初の一年は慎重に動いた。</p>
 <p>政治家として表に出る前に、まず土台が必要だった。</p>
 <p>地方自治体の選挙に出た。小さな選挙区だった。</p>
 <p>知名度はない。資金もない。組織もない。</p>
 <p>それでも当選した。</p>
-<p>理由は単純だった<span class="dash">&mdash;&mdash;</span>誰よりも具体的に、数字で語ったからだ。</p>
+<p>理由は単純だった<i class="d"></i>誰よりも具体的に、数字で語ったからだ。</p>
 <p>未来を知っている人間にとって、それは難しいことではなかった。</p>
 <p>だが、その「具体性」が、周囲の警戒を生んだ。</p>
 <p>市丸は、それを織り込み済みだった。</p>
@@ -150,7 +209,7 @@
 <p>三十年以上、地方行政の内側に身を置いてきた。予算の折衝を重ね、住民の陳情を聞き、制度の歪みを知りながら、それでも「今あるものを壊さない」ことを信条としてきた男だった。</p>
 <p>彼は自分のことを「現実主義者」と呼んでいた。</p>
 <p>周囲からは「調整の達人」と呼ばれていた。</p>
-<p>ただ一人<span class="dash">&mdash;&mdash;</span>亡き妻だけが、「あなたは本当は、諦めるのが怖いんでしょ」と言った。</p>
+<p>ただ一人<i class="d"></i>亡き妻だけが、「あなたは本当は、諦めるのが怖いんでしょ」と言った。</p>
 <p>その言葉は、いまも胸の奥に刺さったままだった。</p>
 <p class="nr">演説後、高瀬は声をかける。</p>
 <p class="no-indent">「君の言っていることは正しい」</p>
@@ -167,14 +226,13 @@
 <p class="no-indent">「政治は、諦めないことだ。だが、無謀と勇気は違う」</p>
 <p>父は町医者だった。地域で唯一の外科医として三十年働き、採算が取れなくなっても診療所を閉めなかった。</p>
 <p>市丸の顔を見た時、高瀬はなぜか、その父を思い出した。</p>
-<p>確信の目。焦りのなさ。そして<span class="dash">&mdash;&mdash;</span>孤独の匂い。</p>
+<p>確信の目。焦りのなさ。そして<i class="d"></i>孤独の匂い。</p>
 <p class="no-indent">（あの男は、何かを知っている）</p>
 <p>直感があった。だが、それが何であるかは、まだ分からなかった。</p>
 </div>
 
-<div class="chapter-title"><p>第二章</p></div>
-<div class="chapter-label">未来を知る者の孤独</div>
-<div class="novel">
+<h2>第二章</h2><div>未来を知る者の孤独</div>
+<div class="content">
 <p>最初は、すべてが計算通りだった。</p>
 <p>年金制度の改革案を強引に通し、地方財政の再編に着手し、政治参加を促す制度改正を進める。</p>
 <p>未来で見た「破滅の起点」を、ピンポイントで潰していく。</p>
@@ -193,7 +251,7 @@
 <p>未来で見た年表と、現在の出来事を並べていく。</p>
 <p>最初は、ほぼ一致していた。</p>
 <p>だが今、ズレが生じている。</p>
-<p>しかもそのズレは、小さな点ではなく<span class="dash">&mdash;&mdash;</span></p>
+<p>しかもそのズレは、小さな点ではなく<i class="d"></i></p>
 <p>まるで川が分岐するように、下流に向かうほど広がっていく。</p>
 <p class="no-indent">（俺が変えたから、変わった）</p>
 <p>当然だ。それが目的だった。</p>
@@ -213,10 +271,10 @@
 <p>未来の記憶が、過去の鎖になっていく。</p>
 <p>そして気づく。</p>
 <p>自分はもう、未来を救っているのではない。</p>
-<p>ただ<span class="dash">&mdash;&mdash;</span>選び続けているだけだと。</p>
+<p>ただ<i class="d"></i>選び続けているだけだと。</p>
 <p>それは静かな恐怖だった。</p>
 <p>叫びたくなるような恐怖ではない。</p>
-<p>毎朝、起きるたびに、昨日より少しだけ地面が柔らかくなっている<span class="dash">&mdash;&mdash;</span>そういう種類の恐怖だった。</p>
+<p>毎朝、起きるたびに、昨日より少しだけ地面が柔らかくなっている<i class="d"></i>そういう種類の恐怖だった。</p>
 <p class="nr">その頃、遥は市丸に電話をかけていた。</p>
 <p>妹の遥は、市丸より六歳下だった。</p>
 <p>過疎地域の小さな病院に赴任して、三年目になる。</p>
@@ -242,9 +300,8 @@
 <p>と、珍しく曖昧な言葉を返した。</p>
 </div>
 
-<div class="chapter-title"><p>第三章</p></div>
-<div class="chapter-label">選択のコスト</div>
-<div class="novel">
+<h2>第三章</h2><div>選択のコスト</div>
+<div class="content">
 <p>地方医療再編法案。合理性の極致だった。</p>
 <p>非効率な医療を統合し、限られた資源で最大多数を救う。</p>
 <p>理屈としては、完全に正しい。</p>
@@ -293,9 +350,8 @@
 <p>しばらく眺めてから、また静かにしまった。</p>
 </div>
 
-<div class="chapter-title"><p>第四章</p></div>
-<div class="chapter-label">対立という対話</div>
-<div class="novel">
+<h2>第四章</h2><div>対立という対話</div>
+<div class="content">
 <p>国会は、静かな戦場だった。</p>
 <p>高瀬が立つ。</p>
 <p class="no-indent">「急激な改革は、弱い人間から壊す」</p>
@@ -314,7 +370,7 @@
 <p>窓の外に東京の夜景が広がっている。</p>
 <p>三十年前、初めてここに来た時、同じ景色を見て「守らなければ」と思った。</p>
 <p>今も、その気持ちは変わらない。</p>
-<p>だが<span class="dash">&mdash;&mdash;</span>守ろうとしているものが、すでに変わっているのかもしれなかった。</p>
+<p>だが<i class="d"></i>守ろうとしているものが、すでに変わっているのかもしれなかった。</p>
 <p>高瀬には、かつての同僚がいた。</p>
 <p>田代という男で、熱心な改革派だった。</p>
 <p>二十年前、医療制度の見直しを急進的に推し進め、いくつかの地方病院を統廃合させた。</p>
@@ -348,19 +404,18 @@
 <p>ただ、受け取った、という合図だった。</p>
 </div>
 
-<div class="chapter-title"><p>第五章</p></div>
-<div class="chapter-label">告白</div>
-<div class="novel">
+<h2>第五章</h2><div>告白</div>
+<div class="content">
 <p>彼は政治の世界に現れてから、三つの「あり得ない」を的中させた。</p>
 <p>一つは、誰も予想しなかった海外メガバンクの破綻。</p>
-<p>一つは、記録的な火山噴火の発生時刻<span class="dash">&mdash;&mdash;</span>彼はこれを「防災訓練」の名目で事前に避難を完了させていた。</p>
+<p>一つは、記録的な火山噴火の発生時刻<i class="d"></i>彼はこれを「防災訓練」の名目で事前に避難を完了させていた。</p>
 <p>そしてもう一つは、現職総理の突然の辞意表明。</p>
 <p>世間は彼を「稀代の戦略家」か「神がかり的な予言者」として、畏怖混じりに見始めていた。</p>
 <p class="nr">異変に気づいたのは、一人のジャーナリストだった。</p>
 <p class="no-indent">「偶然、にしては多すぎる」</p>
 <p>やがて研究者たちも動き始めた。</p>
 <p>情報源はどこか。</p>
-<p>内部リークか、それとも<span class="dash">&mdash;&mdash;</span></p>
+<p>内部リークか、それとも<i class="d"></i></p>
 <p class="no-indent">「未来予測？」</p>
 <p>疑念は、やがて確信に変わっていく。</p>
 <p>週刊誌が動いた。テレビが取り上げた。ネットが燃えた。</p>
@@ -404,13 +459,12 @@
 <p>市丸は頷いた。</p>
 </div>
 
-<div class="chapter-title"><p>第六章</p></div>
-<div class="chapter-label">問いの種</div>
-<div class="novel">
+<h2>第六章</h2><div>問いの種</div>
+<div class="content">
 <p>記者会見の場で、市丸は言った。</p>
 <p class="no-indent">「私は、八十年後の未来から来ました」</p>
 <p>会場が凍りつく。</p>
-<p class="no-indent">「そしてその未来では、日本はもう<span class="dash">&mdash;&mdash;</span>取り返しがつかない国になっています」</p>
+<p class="no-indent">「そしてその未来では、日本はもう<i class="d"></i>取り返しがつかない国になっています」</p>
 <p>沈黙の後、嘲笑が起きた。</p>
 <p>だが、同時に。</p>
 <p>なぜか、否定しきれない空気があった。</p>
@@ -418,7 +472,7 @@
 <p>あまりにも現実に即していた。</p>
 <p>世論は割れた。</p>
 <p>狂人だと切り捨てる者。</p>
-<p>そして<span class="dash">&mdash;&mdash;</span></p>
+<p>そして<i class="d"></i></p>
 <p class="no-indent">「もし本当だったら？」</p>
 <p>と考え始める者。</p>
 <p>重要なのは、真偽ではなかった。</p>
@@ -432,7 +486,7 @@
 <p>何度も、同じ場面を繰り返した。</p>
 <p>市丸が「八十年後から来た」と言う瞬間。</p>
 <p>笑わない表情。揺れない声。</p>
-<p class="no-indent">（信じるか、信じないか<span class="dash">&mdash;&mdash;</span>それは問題ではない）</p>
+<p class="no-indent">（信じるか、信じないか<i class="d"></i>それは問題ではない）</p>
 <p>高瀬が気になったのは別のことだった。</p>
 <p>市丸は、「未来を変えたい」とは言わなかった。</p>
 <p class="no-indent">「問いを残したい」と言った。</p>
@@ -444,7 +498,7 @@
 <p class="no-indent">「話しました」</p>
 <p class="no-indent">「……そうか」</p>
 <p>高瀬はソファに深く座った。</p>
-<p class="no-indent">「君が本当のことを言ったとして、私が信じたとして<span class="dash">&mdash;&mdash;</span>それで、君は何を望む？」</p>
+<p class="no-indent">「君が本当のことを言ったとして、私が信じたとして<i class="d"></i>それで、君は何を望む？」</p>
 <p>市丸は窓の外を見た。</p>
 <p class="no-indent">「反対し続けてください」</p>
 <p>高瀬は眉を動かした。</p>
@@ -458,7 +512,7 @@
 <p class="no-indent">「反対し続けてくれ」</p>
 <p>あの言葉が、頭から離れない。</p>
 <p>三十年以上、政治の世界にいた。反対することは、何度もあった。</p>
-<p>だが、反対することを<span class="dash">&mdash;&mdash;</span>頼まれたのは、初めてだった。</p>
+<p>だが、反対することを<i class="d"></i>頼まれたのは、初めてだった。</p>
 <p>敵だと思っていた男が、自分を必要としていた。</p>
 <p>ただし、味方としてではなく。</p>
 <p>高瀬は立ち止まり、窓の外の夜景を見た。</p>
@@ -466,9 +520,8 @@
 <p>そう思いながら、口元が少しだけ緩んだ。</p>
 </div>
 
-<div class="chapter-title"><p>第七章</p></div>
-<div class="chapter-label">切り捨て</div>
-<div class="novel">
+<h2>第七章</h2><div>切り捨て</div>
+<div class="content">
 <p>法案採決前夜。</p>
 <p>東京は、妙に静かだった。</p>
 <p>嵐の前のように、ではない。</p>
@@ -552,13 +605,12 @@
 <p>それ以上でも、それ以下でもなかった。</p>
 </div>
 
-<div class="chapter-title"><p>第八章</p></div>
-<div class="chapter-label">採決</div>
-<div class="novel">
+<h2>第八章</h2><div>採決</div>
+<div class="content">
 <p>当日。</p>
 <p>国会は満席だった。</p>
 <p>傍聴席だけでなく、見えない場所にも人がいた。</p>
-<p>メディア、利害関係者、そして<span class="dash">&mdash;&mdash;</span></p>
+<p>メディア、利害関係者、そして<i class="d"></i></p>
 <p>自分の未来を他人に委ねてきた人々。</p>
 <p>議場の空気は重い。</p>
 <p>だが、その重さの正体は怒りではない。</p>
@@ -588,7 +640,7 @@
 <p>ここで折れる未来。修正を受け入れる未来。一部を守る未来。</p>
 <p>どれも、魅力的だった。</p>
 <p>どれも、楽だった。</p>
-<p>そして<span class="dash">&mdash;&mdash;</span></p>
+<p>そして<i class="d"></i></p>
 <p>どれも、いずれ崩れる。</p>
 <p>市丸は、息を吐く。</p>
 <p class="no-indent">「賛成」</p>
@@ -624,13 +676,12 @@
 <p>ただ、写真の中の妻は、どこか笑っているように見えた。</p>
 </div>
 
-<div class="chapter-title"><p>第九章</p></div>
-<div class="chapter-label">余波</div>
-<div class="novel">
+<h2>第九章</h2><div>余波</div>
+<div class="content">
 <p>法案成立後。</p>
 <p>数字は改善した。</p>
 <p>財政は持ち直し、医療の効率は上がり、“全体として“ の救済数は増えた。</p>
-<p>だが、同時に<span class="dash">&mdash;&mdash;</span></p>
+<p>だが、同時に<i class="d"></i></p>
 <p>地図から消えた場所がある。</p>
 <p>遥の働いていた地域も、その一つだった。</p>
 <p>報告書にはこう書かれている。</p>
@@ -705,9 +756,8 @@
 <p>だが、電話をかけてきたという事実だけが、静かに残った。</p>
 </div>
 
-<div class="chapter-title"><p>最終章</p></div>
-<div class="chapter-label">消失</div>
-<div class="novel">
+<h2>最終章</h2><div>消失</div>
+<div class="content">
 <p>最初の異変は、小さな違和感だった。</p>
 <p>資料の一部が、思い出せない。</p>
 <p>未来の細部が、抜け落ちている。</p>
@@ -741,7 +791,7 @@
 <p>当然だ。</p>
 <p>その問いに、正解はない。</p>
 <p>あるのは、選択だけだ。</p>
-<p>そして<span class="dash">&mdash;&mdash;</span></p>
+<p>そして<i class="d"></i></p>
 <p>その選択をした “自分“ が、いま消えようとしている。</p>
 <p>最後に、彼は一つだけ理解する。</p>
 <p class="no-indent">（これは、対価だ）</p>
@@ -766,7 +816,7 @@
 <p>ある朝、議員会館の廊下で、市丸の事務所の前を通った。</p>
 <p>扉は閉まっていた。</p>
 <p>それだけなら珍しくない。</p>
-<p>だが、表札が<span class="dash">&mdash;&mdash;</span>消えていた。</p>
+<p>だが、表札が<i class="d"></i>消えていた。</p>
 <p>枠だけが残り、名前の部分だけが、まるで最初からそこに何もなかったかのように、白かった。</p>
 <p>スタッフに聞いた。</p>
 <p class="no-indent">「市丸議員は？」</p>
@@ -783,12 +833,11 @@
 <p>それは、信頼の形だったのかもしれない。</p>
 <p>高瀬は、その日から手帳に書き始めた。</p>
 <p>あの男との対話を。</p>
-<p>記録として、ではなく<span class="dash">&mdash;&mdash;</span>忘れないために。</p>
+<p>記録として、ではなく<i class="d"></i>忘れないために。</p>
 </div>
 
-<div class="chapter-title"><p>エンディング</p></div>
-<div class="chapter-label">&nbsp;</div>
-<div class="novel">
+<h2>エンディング</h2><div>&nbsp;</div>
+<div class="content">
 <p>数十年後。</p>
 <p>日本は、かろうじて踏みとどまっていた。</p>
 <p>すべてが救われたわけではない。</p>
@@ -839,8 +888,21 @@
 <p>まるで最初から、</p>
 <p>そこに人などいなかったかのように。</p>
 </div>
-<div class="ending">
-<span class="dash">&mdash;&mdash;</span>了<span class="dash">&mdash;&mdash;</span>
-</div>
+<div class="fin"><i class="d"></i>了<i class="d"></i></div>
+</main>
+<script>
+	document.addEventListener('DOMContentLoaded', () => {
+		const nav = document.getElementById('novel-nav');
+		const headers = document.querySelectorAll('h2');
+		headers.forEach((h2, index) => {
+			const id = 'chapter-' + index;
+			h2.id = id;
+			const link = document.createElement('a');
+			link.href = '#' + id;
+			link.textContent = h2.textContent;
+			nav.appendChild(link);
+		});
+	});
+</script>
 </body>
 </html>
