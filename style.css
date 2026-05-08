@@ -55,6 +55,7 @@ h2 + div {
 }
 .content p {
 	margin: 0 0 1em 0;
+	line-height: 1.5em;
 	text-indent: 1em;
 }
 .content p.no-indent {
