@@ -1,4 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
+	// ローカル表示の判定
+	const hostname = window.location.hostname;
+	const protocol = window.location.protocol;
+	const isDevelopment =
+		protocol === 'file:' ||
+		hostname === 'localhost' ||
+		hostname === '127.0.0.1';
+	if (isDevelopment) {
+		document.body.style.backgroundColor = '#e8f4fb';
+	}
+
 	// 目次の生成
 	const nav = document.getElementById('novel-nav');
 	const headers = document.querySelectorAll('h2');
