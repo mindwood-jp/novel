@@ -13,7 +13,7 @@ h1 {
 	letter-spacing: .1em;
 }
 h2 {
-	margin-top: 5rem;
+	margin-top: 4.5rem;
 	margin-bottom: 0.1rem;
 	font-size: 1rem;
 	color: #555;
@@ -51,7 +51,7 @@ h2 + div {
 	font-weight: bold;
 	margin-bottom: 1.5rem;
 	border-bottom: 1px solid #ccc;
-	padding-bottom: 0.4rem;
+	padding-bottom: .4rem;
 }
 .content p {
 	margin: 0 0 1em 0;
@@ -70,6 +70,13 @@ h2 + div {
 	text-align: center;
 	margin: 2em 0;
 }
+.content ruby {
+	ruby-align: center;
+}
+.content rt {
+	font-size: .5em;
+	letter-spacing: .05em;
+}
 i.d::before {
 	content: "――";
 	font-family: "Yu Mincho", "YuMincho", "Hiragino Mincho ProN", serif;
@@ -80,7 +87,7 @@ i.d::before {
 	text-align: center;
 	margin-top: 3rem;
 	font-weight: bold;
-	letter-spacing: 0.2em;
+	letter-spacing: .2em;
 }
 #novel-nav {
 	position: absolute;
@@ -93,7 +100,7 @@ i.d::before {
 	background: rgba(255, 255, 255, 0.4);
 	padding: 0;
 	border-radius: 6px;
-	font-size: 0.85rem;
+	font-size: .85rem;
 	min-width: 100px;
 	overflow: hidden;
 }
@@ -118,7 +125,7 @@ i.d::before {
 	#novel-nav {
 		bottom: 2px;
 		right: 6px;
-		font-size: 0.7rem;
+		font-size: .7rem;
 		min-width: 70px;
 	}
 	#novel-nav a {
