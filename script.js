@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	const nav = document.getElementById('novel-nav');
 	const headers = document.querySelectorAll('h2');
 	headers.forEach((h2, index) => {
+		if (h2.textContent.trim() === 'プロローグ') return;
 		const id = 'chapter-' + index;
 		h2.id = id;
 		const link = document.createElement('a');
