@@ -59,4 +59,39 @@ document.addEventListener('DOMContentLoaded', () => {
 	};
 	updateChapter();
 	window.addEventListener('scroll', updateChapter);
+
+	// 拡大・縮小ズーム（PC閲覧時のみ）
+	const zoomTargets = [document.querySelector('header'), document.querySelector('main')].filter(Boolean);
+	const ZOOM_MIN = 0.7;
+	const ZOOM_MAX = 1.8;
+	const ZOOM_STEP = 0.1;
+	const ZOOM_KEY = 'novelZoom';
+	let zoom = parseFloat(localStorage.getItem(ZOOM_KEY)) || 1;
+	const zoomControl = document.createElement('div');
+	zoomControl.id = 'zoom-control';
+	const zoomIn = document.createElement('button');
+	zoomIn.type = 'button';
+	zoomIn.textContent = '＋';
+	zoomIn.setAttribute('aria-label', '拡大');
+	const zoomLevel = document.createElement('div');
+	zoomLevel.id = 'zoom-level';
+	zoomLevel.title = 'クリックで等倍に戻す';
+	const zoomOut = document.createElement('button');
+	zoomOut.type = 'button';
+	zoomOut.textContent = '－';
+	zoomOut.setAttribute('aria-label', '縮小');
+	zoomControl.appendChild(zoomIn);
+	zoomControl.appendChild(zoomLevel);
+	zoomControl.appendChild(zoomOut);
+	document.body.appendChild(zoomControl);
+	const applyZoom = () => {
+		zoom = Math.min(ZOOM_MAX, Math.max(ZOOM_MIN, Math.round(zoom * 100) / 100));
+		zoomTargets.forEach((el) => { el.style.zoom = zoom; });
+		zoomLevel.textContent = Math.round(zoom * 100) + '%';
+		localStorage.setItem(ZOOM_KEY, zoom);
+	};
+	zoomIn.addEventListener('click', () => { zoom += ZOOM_STEP; applyZoom(); });
+	zoomOut.addEventListener('click', () => { zoom -= ZOOM_STEP; applyZoom(); });
+	zoomLevel.addEventListener('click', () => { zoom = 1; applyZoom(); });
+	applyZoom();
 });
