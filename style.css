@@ -53,27 +53,27 @@ h2 + div {
 	border-bottom: 1px solid #ccc;
 	padding-bottom: .4rem;
 }
-.content p {
+section p {
 	margin: 0 0 1em 0;
 	line-height: 1.5em;
 	text-indent: 1em;
 }
-.content p.no-indent {
+section p.no-indent {
 	text-indent: 0;
 }
-.content p.nr {
+section p.nr {
 	margin-top: 4em;
 }
-.content p.c::before {
+section p.c::before {
 	content: "◆";
 	display: block;
 	text-align: center;
 	margin: 2em 0;
 }
-.content ruby {
+section ruby {
 	ruby-align: center;
 }
-.content rt {
+section rt {
 	font-size: .5em;
 	letter-spacing: .05em;
 }
