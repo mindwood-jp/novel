@@ -71,14 +71,14 @@ document.addEventListener('DOMContentLoaded', () => {
 	zoomControl.id = 'zoom-control';
 	const zoomIn = document.createElement('button');
 	zoomIn.type = 'button';
-	zoomIn.textContent = '＋';
+	zoomIn.textContent = '+';
 	zoomIn.setAttribute('aria-label', '拡大');
 	const zoomLevel = document.createElement('div');
 	zoomLevel.id = 'zoom-level';
 	zoomLevel.title = 'クリックで等倍に戻す';
 	const zoomOut = document.createElement('button');
 	zoomOut.type = 'button';
-	zoomOut.textContent = '－';
+	zoomOut.textContent = '−';
 	zoomOut.setAttribute('aria-label', '縮小');
 	zoomControl.appendChild(zoomIn);
 	zoomControl.appendChild(zoomLevel);

@@ -170,6 +170,8 @@ i.d::before {
 	display: none;
 }
 #zoom-control {
+	font-family: 'Montserrat', 'Futura', sans-serif;
+	font-weight: 700;
 	position: fixed;
 	top: 50%;
 	right: 12px;
@@ -187,14 +189,13 @@ i.d::before {
 	border: 1px solid #ccc;
 	border-radius: 6px;
 	cursor: pointer;
-	font-size: 1.2rem;
+	font-size: 1.8rem;
 	color: #555;
 	line-height: 1;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	transition: background-color 0.2s;
-	font-family: inherit;
 	padding: 0;
 }
 #zoom-control button:hover {
