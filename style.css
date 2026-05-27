@@ -54,8 +54,8 @@ h2 + div {
 	padding-bottom: .4rem;
 }
 section p {
-	margin: 0 0 1em 0;
-	line-height: 1.5em;
+	margin: 0 0 1.5em 0;
+	line-height: 2em;
 	text-indent: 1em;
 }
 section p.no-indent {
@@ -68,7 +68,7 @@ section p.c::before {
 	content: "◆";
 	display: block;
 	text-align: center;
-	margin: 2em 0;
+	margin: 3em 0;
 }
 section ruby {
 	ruby-align: center;
