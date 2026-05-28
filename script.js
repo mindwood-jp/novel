@@ -127,9 +127,9 @@ document.addEventListener('DOMContentLoaded', () => {
 	document.body.appendChild(ttsControl);
 
 	let ttsParagraphs = [];
-	let ttsIndex = 0;        // 現在再生中の段落
+	let ttsIndex = 0; // 現在再生中の段落
 	let ttsPlaying = false;
-	let ttsToken = 0;        // 再生セッションを識別。cancel時にインクリメント
+	let ttsToken = 0; // 再生セッションを識別。cancel時にインクリメント
 
 	const getTtsParagraphs = () => {
 		let current = null;
@@ -163,8 +163,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		document.querySelectorAll('.tts-highlight').forEach(el => el.classList.remove('tts-highlight'));
 	};
 
-	// 段落要素から読み上げ用テキストを生成
-	// ルビ（<ruby>漢字<rt>よみ</rt></ruby>）は読み（<rt>）だけを使う
+	// 段落要素から読み上げ用テキストを生成（ルビは読みだけを使う）
 	const getReadingText = (element) => {
 		const clone = element.cloneNode(true);
 		clone.querySelectorAll('ruby').forEach((ruby) => {
@@ -176,7 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	};
 
 	const stopSpeaking = () => {
-		ttsToken++;          // 進行中のonendを無効化
+		ttsToken++; // 進行中のonendを無効化
 		ttsPlaying = false;
 		synth.cancel();
 	};
@@ -188,8 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	};
 
 	const speakNext = () => {
-		if (ttsIndex >= ttsParagraphs.length) {
-			// 章末まで読み終わった
+		if (ttsIndex >= ttsParagraphs.length) { // 章末まで読み終わった
 			clearHighlight();
 			ttsPlaying = false;
 			ttsIndex = 0;
@@ -200,8 +198,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		const text = p.textContent.trim();
 		clearHighlight();
 		if (text) p.classList.add('tts-highlight');
-		p.scrollIntoView({ behavior: 'smooth', block: 'center' });
-		// 空段落（◆だけなど）はスキップ
+		p.scrollIntoView({ behavior: 'smooth', block: 'center' }); // 空段落（◆だけなど）はスキップ
 		if (!text) {
 			ttsIndex++;
 			speakNext();
@@ -223,7 +220,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			speakNext();
 		};
 		// 場面転換（nrクラス）の段落は、少し間を置いてから読み始める
-		const NR_PAUSE_MS = 500;
+		const NR_PAUSE_MS = 2500;
 		if (p.classList.contains('nr')) {
 			setTimeout(() => {
 				if (!ttsPlaying || myToken !== ttsToken) return; // 待機中に停止されたら読まない
@@ -245,7 +242,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	btnPlay.addEventListener('click', () => {
 		if (ttsPlaying) {
-			// 一時停止：再開時に同じ段落から
+			// 一時停止（再開時に同じ段落から）
 			stopSpeaking();
 			clearHighlight();
 			updateButtons();
@@ -263,6 +260,5 @@ document.addEventListener('DOMContentLoaded', () => {
 	});
 
 	window.addEventListener('beforeunload', () => { synth.cancel(); });
-
 	updateButtons();
 });
