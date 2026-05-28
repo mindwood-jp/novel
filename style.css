@@ -254,7 +254,7 @@ i.d::before {
 .tts-highlight {
 	background: rgba(255, 220, 100, 0.25);
 	border-radius: 3px;
-	transition: background 0.2s;
+	transition: background-color 0.2s;
 }
 body.local-mode .tts-highlight {
 	background: rgba(100, 180, 255, 0.3);

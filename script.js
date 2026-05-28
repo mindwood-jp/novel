@@ -24,8 +24,15 @@ document.addEventListener('DOMContentLoaded', () => {
 		nav.appendChild(link);
 	});
 	
-	// トップへ戻るボタンの表示制御
-	const toTop = document.getElementById('to-top');
+	// トップへ戻るボタンを生成
+	const toTop = document.createElement('a');
+	toTop.id = 'to-top';
+	toTop.href = '#';
+	toTop.title = '先頭へ戻る';
+	toTop.setAttribute('aria-label', '先頭へ戻る');
+	toTop.innerHTML = '<svg width="25" height="25" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 5 L5 13 H9 V20 H15 V13 H19 Z"/></svg>';
+	document.body.appendChild(toTop);
+
 	const headerImg = document.querySelector('header img');
 	const updateToTop = () => {
 		const threshold = headerImg ? headerImg.getBoundingClientRect().bottom + window.scrollY : 0;
@@ -100,15 +107,20 @@ document.addEventListener('DOMContentLoaded', () => {
 	const synth = window.speechSynthesis;
 	if (!synth) return;
 
+	// 面塗りSVGアイコン（currentColorで色を継承）
+	const ICON_PLAY = '<svg width="25" height="25" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4 L19 12 L7 20 Z"/></svg>';
+	const ICON_PAUSE = '<svg width="25" height="25" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>';
+	const ICON_STOP = '<svg width="25" height="25" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="5" y="5" width="14" height="14" rx="1.5"/></svg>';
+
 	const ttsControl = document.createElement('div');
 	ttsControl.id = 'tts-control';
 	const btnPlay = document.createElement('button');
 	btnPlay.type = 'button';
-	btnPlay.textContent = '▶';
+	btnPlay.innerHTML = ICON_PLAY;
 	btnPlay.setAttribute('aria-label', '再生');
 	const btnStop = document.createElement('button');
 	btnStop.type = 'button';
-	btnStop.textContent = '⏹';
+	btnStop.innerHTML = ICON_STOP;
 	btnStop.setAttribute('aria-label', '停止');
 	ttsControl.appendChild(btnPlay);
 	ttsControl.appendChild(btnStop);
@@ -151,35 +163,16 @@ document.addEventListener('DOMContentLoaded', () => {
 		document.querySelectorAll('.tts-highlight').forEach(el => el.classList.remove('tts-highlight'));
 	};
 
-	// 読み上げ用の読み辞書（誤読しやすい語を登録）
-	// ルビが振られていない箇所に適用される。
-	const yomiDict = {
-		'市丸伸一': 'いちまるしんいち',
-		'高瀬誠一': 'たかせせいいち',
-		'市丸': 'いちまる',
-		'高瀬': 'たかせ',
-		'遥': 'はるか',
-	};
-
 	// 段落要素から読み上げ用テキストを生成
-	// 1. ルビ（<ruby>漢字<rt>よみ</rt></ruby>）は読み（<rt>）だけを使う
-	// 2. ルビのない箇所は読み辞書で置換する
+	// ルビ（<ruby>漢字<rt>よみ</rt></ruby>）は読み（<rt>）だけを使う
 	const getReadingText = (element) => {
 		const clone = element.cloneNode(true);
-		// ルビ部分を読み（rt）のテキストに置き換える
 		clone.querySelectorAll('ruby').forEach((ruby) => {
 			const rt = ruby.querySelector('rt');
 			const yomi = rt ? rt.textContent : ruby.textContent;
 			ruby.replaceWith(document.createTextNode(yomi));
 		});
-		let text = clone.textContent.trim();
-		// 辞書置換（長い語から先に置換して部分一致の取りこぼしを防ぐ）
-		Object.keys(yomiDict)
-			.sort((a, b) => b.length - a.length)
-			.forEach((word) => {
-				text = text.split(word).join(yomiDict[word]);
-			});
-		return text;
+		return clone.textContent.trim();
 	};
 
 	const stopSpeaking = () => {
@@ -189,7 +182,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	};
 
 	const updateButtons = () => {
-		btnPlay.textContent = ttsPlaying ? '⏸' : '▶';
+		btnPlay.innerHTML = ttsPlaying ? ICON_PAUSE : ICON_PLAY;
 		btnPlay.setAttribute('aria-label', ttsPlaying ? '一時停止' : '再生');
 		btnStop.disabled = !ttsPlaying && ttsIndex === 0;
 	};
@@ -229,7 +222,16 @@ document.addEventListener('DOMContentLoaded', () => {
 			ttsIndex++;
 			speakNext();
 		};
-		synth.speak(utter);
+		// 場面転換（nrクラス）の段落は、少し間を置いてから読み始める
+		const NR_PAUSE_MS = 500;
+		if (p.classList.contains('nr')) {
+			setTimeout(() => {
+				if (!ttsPlaying || myToken !== ttsToken) return; // 待機中に停止されたら読まない
+				synth.speak(utter);
+			}, NR_PAUSE_MS);
+		} else {
+			synth.speak(utter);
+		}
 	};
 
 	const startSpeaking = () => {
