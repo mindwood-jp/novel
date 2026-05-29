@@ -77,11 +77,10 @@ section rt {
 	font-size: .5em;
 	letter-spacing: .05em;
 }
-i.d::before {
-	content: "――";
+i {
 	font-family: "Yu Mincho", "YuMincho", "Hiragino Mincho ProN", serif;
 	letter-spacing: -0.2em;
-	padding: 0 .5em 0 .1em;
+	padding: 0 .6em 0 .2em;
 }
 .fin {
 	text-align: center;

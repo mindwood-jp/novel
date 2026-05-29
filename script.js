@@ -220,7 +220,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			speakNext();
 		};
 		// 場面転換（nrクラス）の段落は、少し間を置いてから読み始める
-		const NR_PAUSE_MS = 2500;
+		const NR_PAUSE_MS = 800;
 		if (p.classList.contains('nr')) {
 			setTimeout(() => {
 				if (!ttsPlaying || myToken !== ttsToken) return; // 待機中に停止されたら読まない
