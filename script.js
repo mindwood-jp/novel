@@ -242,8 +242,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	btnPlay.addEventListener('click', () => {
 		if (ttsPlaying) {
-			// 一時停止（再開時に同じ段落から）
-			stopSpeaking();
+			stopSpeaking(); // 一時停止（再開時に同じ段落から）
 			clearHighlight();
 			updateButtons();
 		} else {
