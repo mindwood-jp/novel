@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		if (current) {
 			const title = current.nextElementSibling ? current.nextElementSibling.textContent.trim() : '';
 			const chapter = current.textContent.trim();
-			chapterIndicator.textContent = title && title !== '\u00a0' ? chapter + '\u3000' + title : chapter;
+			chapterIndicator.textContent = title ? chapter + '\u3000' + title : chapter;
 			chapterIndicator.style.display = 'block';
 		} else {
 			chapterIndicator.style.display = 'none';
