@@ -19,6 +19,7 @@ h2 {
 	color: #555;
 	font-weight: normal;
 	padding-left: calc(.5em + 5px);
+	letter-spacing: .4em;
 	position: relative;
 }
 h2::before {
@@ -57,6 +58,7 @@ section p {
 	margin: 0 0 1.5em 0;
 	line-height: 2em;
 	text-indent: 1em;
+	line-break: strict;
 }
 section p.no-indent {
 	text-indent: 0;
@@ -81,6 +83,7 @@ i {
 	font-family: "Yu Mincho", "YuMincho", "Hiragino Mincho ProN", serif;
 	letter-spacing: -0.2em;
 	padding: 0 .6em 0 .2em;
+	white-space: nowrap;
 }
 .fin {
 	text-align: center;
@@ -257,4 +260,88 @@ i {
 }
 body.local-mode .tts-highlight {
 	background: rgba(100, 180, 255, 0.3);
+}
+
+/*  印刷用スタイル  */
+@media print {
+	#to-top,
+	#tts-control,
+	#chapter-indicator,
+	#zoom-control,
+	#novel-nav {
+		display: none;
+	}
+	body {
+		writing-mode: vertical-rl;
+		background: #fff;
+		font-size: 1rem;
+		line-height: 1.7;
+	}
+	header {
+		max-width: none;
+		width: 100%;
+		margin: 0;
+		height: 100vh;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	header img {
+		writing-mode: horizontal-tb;
+		max-width: 70%;
+		max-height: 70vh;
+		width: auto;
+		height: auto;
+		display: block;
+		margin: 0 auto;
+	}
+	main {
+		max-width: none;
+		width: 100%;
+		padding: 0;
+		margin: 0;
+	}
+	h1 {
+		margin: 0;
+		font-size: 4rem;
+	}
+	h2 {
+		break-before: page;
+		page-break-before: always;
+		margin: 0;
+		padding: 0;
+	}
+	h2::before {
+		display: none;
+	}
+	h2 + div {
+		border-bottom: none;
+		border-left: 1px solid #ccc;
+		padding-bottom: 0;
+		padding-left: 0.4rem;
+		margin-bottom: 0;
+		margin-left: 1.5rem;
+	}
+	section p {
+		margin: 0 0 0 1.5em;
+	}
+	section p.nr {
+		margin-top: 0;
+		margin-right: 3em;
+	}
+	section p.c::before {
+		content: "◆";
+		display: block;
+		text-align: center;
+		margin: 3em 0;
+	}
+	section ruby {
+		ruby-position: over;
+	}
+	i {
+		padding: .5em 0 .8em 0;
+	}
+	.tts-highlight {
+		background: none;
+	}
 }

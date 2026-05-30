@@ -259,5 +259,13 @@ document.addEventListener('DOMContentLoaded', () => {
 	});
 
 	window.addEventListener('beforeunload', () => { synth.cancel(); });
+
+	// 印刷開始前に読み上げを止めてハイライトをクリア
+	window.addEventListener('beforeprint', () => {
+		stopSpeaking();
+		clearHighlight();
+		updateButtons();
+	});
+
 	updateButtons();
 });
