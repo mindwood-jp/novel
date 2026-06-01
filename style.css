@@ -158,6 +158,7 @@ i {
 }
 #to-top:hover {
 	background: rgba(0, 0, 0, 0.08);
+	transform: translate(1px, 1px);
 }
 #chapter-indicator {
 	position: fixed;
@@ -205,6 +206,7 @@ i {
 }
 #zoom-control button:hover {
 	background: rgba(0, 0, 0, 0.08);
+	transform: translate(1px, 1px);
 }
 #zoom-level {
 	font-size: 0.7rem;
@@ -251,8 +253,9 @@ i {
 	padding: 0;
     box-shadow: 4px 4px 6px 0px rgba(0, 0, 0, 0.25);
 }
-#tts-control button:hover {
+#tts-control button:hover:not(:disabled) {
 	background: rgba(0, 0, 0, 0.08);
+	transform: translate(1px, 1px);
 }
 #tts-control button:disabled {
 	opacity: 0.35;
