@@ -154,7 +154,7 @@ i {
 	text-decoration: none;
 	line-height: 1;
 	transition: background-color 0.2s;
-    box-shadow: 4px 4px 6px 0px rgba(0, 0, 0, 0.25);
+	box-shadow: 4px 4px 6px 0px rgba(0, 0, 0, 0.25);
 }
 #to-top:hover {
 	background: rgba(0, 0, 0, 0.08);
@@ -170,7 +170,7 @@ i {
 	border-radius: 6px;
 	padding: 2px 15px;
 	font-size: 0.9rem;
-    font-weight: bold;
+	font-weight: bold;
 	color: #fff;
 	display: none;
 }
@@ -202,7 +202,7 @@ i {
 	justify-content: center;
 	transition: background-color 0.2s;
 	padding: 0;
-    box-shadow: 4px 4px 6px 0px rgba(0, 0, 0, 0.25);
+	box-shadow: 4px 4px 6px 0px rgba(0, 0, 0, 0.25);
 }
 #zoom-control button:hover {
 	background: rgba(0, 0, 0, 0.08);
@@ -219,7 +219,7 @@ i {
 	text-align: center;
 	cursor: pointer;
 	user-select: none;
-    box-shadow: 4px 4px 6px 0px rgba(0, 0, 0, 0.25);
+	box-shadow: 4px 4px 6px 0px rgba(0, 0, 0, 0.25);
 }
 @media screen and (max-width: 480px) {
 	#zoom-control {
@@ -251,7 +251,7 @@ i {
 	justify-content: center;
 	transition: background-color 0.2s;
 	padding: 0;
-    box-shadow: 4px 4px 6px 0px rgba(0, 0, 0, 0.25);
+	box-shadow: 4px 4px 6px 0px rgba(0, 0, 0, 0.25);
 }
 #tts-control button:hover:not(:disabled) {
 	background: rgba(0, 0, 0, 0.08);
@@ -268,6 +268,11 @@ i {
 }
 body.local-mode .tts-highlight {
 	background: rgba(100, 180, 255, 0.3);
+}
+rt {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
 }
 
 /*  印刷用スタイル  */
