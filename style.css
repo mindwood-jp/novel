@@ -95,7 +95,7 @@ i {
 	display: grid;
 	grid-template-columns: repeat(6, 1fr);
 	gap: 6px;
-	margin-top: .5rem;
+	margin: .5rem .2rem 0;
 	font-size: .85rem;
 }
 #novel-nav a {
