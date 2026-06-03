@@ -92,47 +92,40 @@ i {
 	letter-spacing: .2em;
 }
 #novel-nav {
-	position: absolute;
-	bottom: 12px;
-	right: 25px;
-	z-index: 10;
-	display: flex;
-	flex-direction: column;
-	gap: 0;
-	background: rgba(255, 255, 255, 0.4);
-	padding: 0;
-	border-radius: 6px;
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	gap: 6px;
+	margin-top: .5rem;
 	font-size: .85rem;
-	min-width: 100px;
-	overflow: hidden;
 }
 #novel-nav a {
 	color: #1a1a1a;
 	text-decoration: none;
-	line-height: 1.2;
-	text-align: right;
-	width: 100%;
+	text-align: center;
+	line-height: 1.4;
 	display: block;
-	padding: 3px 12px; 
+	padding: 6px 2px;
 	box-sizing: border-box;
-	border-bottom: 1px solid rgba(0,0,0,0.1);
-}
-#novel-nav a:last-child {
-	border-bottom: none;
+	background: rgba(255, 255, 255, 0.5);
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	white-space: nowrap;
+	transition: background-color 0.2s;
+	box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.25);
 }
 #novel-nav a:hover {
-	background: rgba(0, 0, 0, 0.1);
+	background: rgba(0, 0, 0, 0.06);
+	transform: translate(1px, 1px);
 }
 @media screen and (max-width: 480px) {
 	#novel-nav {
-		bottom: 5px;
-		right: 10px;
-		font-size: .6rem;
-		min-width: 70px;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 4px;
+		font-size: .75rem;
 	}
 	#novel-nav a {
-		padding: 1px 8px;
-		line-height: 1.0;
+		padding: 4px 2px;
+		line-height: 1.2;
 	}
 }
 #to-top {
