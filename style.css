@@ -66,8 +66,7 @@ section p.no-indent {
 section p.nr {
 	margin-top: 4em;
 }
-section p.c::before {
-	content: "◆";
+section p.c {
 	display: block;
 	text-align: center;
 	margin: 3em 0;
@@ -336,11 +335,8 @@ rt {
 		margin-top: 0;
 		margin-right: 3em;
 	}
-	section p.c::before {
-		content: "◆";
-		display: block;
-		text-align: center;
-		margin: 3em 0;
+	section p.c {
+		margin: 0 2em;
 	}
 	section ruby {
 		ruby-position: over;
