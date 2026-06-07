@@ -58,14 +58,11 @@ header img {
 	color: #fff;
 	text-decoration: none;
 	background: rgba(25, 25, 112, 0.8);
-	border: 1px solid rgba(0, 0, 0, 0.15);
-	border-radius: 6px;
-	padding: 6px 12px;
-	box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+	padding: 5px 15px;
 	transition: background-color 0.2s;
 }
 .review-link:hover {
-	background: rgba(25, 25, 112, 0.7);
+	background: rgba(255, 20, 147, 0.8);
 	transform: translate(1px, 1px);
 }
 @media screen and (max-width: 480px) {
